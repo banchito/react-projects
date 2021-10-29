@@ -130,3 +130,5 @@ package.json
 3. How do we test Login.js page?
    1. Does the page look correct?
    2. Is the path correct?
+4. How do we test Info.js?
+   1. Is it getting the correct data back?

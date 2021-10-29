@@ -10,8 +10,14 @@ const GithubContext = React.createContext();
 
 // use `nfn` for const
 const GithubProvider = ({ children }) => {
+    //the default value of useState is mockUser
+    //later we can use setGithubUser() to change the value
+    //`dar`
+    const [githubUser, setGithubUser] = useState(mockUser);
+    const [repos, setRepos] = useState(mockRepos);
+    const [followers, setFollowers] = useState(mockFollowers);
     return (
-        <GithubContext.Provider value={'hello'}>
+        <GithubContext.Provider value={{ githubUser, repos, followers }}>
             {children}
         </GithubContext.Provider>);
 };
