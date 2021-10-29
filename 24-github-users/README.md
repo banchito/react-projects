@@ -126,3 +126,7 @@ package.json
   - Does the page show up on invalid endpoints?
   - Does the back home button take us to correct page
   - Does the page look as expected
+
+3. How do we test Login.js page?
+   1. Does the page look correct?
+   2. Is the path correct?
