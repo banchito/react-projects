@@ -13,7 +13,7 @@
 import styled from "styled-components";
 
 const ReactComponent = () => {
- // logic here
+ // return a styled **component**
  return <Wrapper>
  {some content}
  </Wrapper>
@@ -31,8 +31,11 @@ export default ReactComponent
 [React Icons - Main Docs](https://react-icons.github.io/react-icons/)
 
 ```jsx
-import { FiUsers, FiUserPlus } from 'react-icons/fi';
-<FiUsers className='nameOfTheClass'> </FiUsers>;
+// use a named import
+// follow the docs on getting certain icons
+import { FiUsers, FiUserPlus } from "react-icons/fi";
+// use the icon as a component
+<FiUsers className="nameOfTheClass"> </FiUsers>;
 ```
 
 ## React Router Dom
@@ -113,3 +116,7 @@ package.json
 ```
 
 [create-react-app Warning Fix Blog Post](https://community.netlify.com/t/how-to-fix-build-failures-with-create-react-app-in-production/17752)
+
+## Testing
+
+1. How do we ensure that all the paths of the Routes are correct in App.js?
