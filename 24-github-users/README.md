@@ -132,3 +132,5 @@ package.json
    2. Is the path correct?
 4. How do we test Info.js?
    1. Is it getting the correct data back?
+5. How do we test the updated Info.js with the icons?
+   1. One thing to notice here is that each icon has the same className. That's because these are used for styling purposes.
