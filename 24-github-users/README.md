@@ -120,3 +120,9 @@ package.json
 ## Testing
 
 1. How do we ensure that all the paths of the Routes are correct in App.js?
+2. How do we test Error.js page?
+
+- There are several risks
+  - Does the page show up on invalid endpoints?
+  - Does the back home button take us to correct page
+  - Does the page look as expected

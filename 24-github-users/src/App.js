@@ -12,14 +12,22 @@ function App() {
 
     //exact={true} tells Dashboard to only appear on
     // localhost/ and not on localhost/*
-    <Router>
-      <Route path="/" exact={true}>
-        <Dashboard></Dashboard>
 
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
+    //<Switch> will render the first component that is found
+    //and not rendering the Error page on every Route
+    <Router>
+      <Switch>
+        <Route path="/" exact={true}>
+          <Dashboard></Dashboard>
+
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="*">
+          <Error></Error>
+        </Route>
+      </Switch >
     </Router>
   );
 }
