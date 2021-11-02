@@ -1,12 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 const Error = () => {
-  return <Wrapper>
-    <h1>404</h1>
-    <h3>Sorry this page can't be found</h3>
-    <Link to="/" className="btn">back home</Link>
-  </Wrapper>;
+  return (
+    <Wrapper>
+      <h1>404</h1>
+      <h3>Sorry this page can't be found</h3>
+      <Link data-testid="back-home" to="/" className="btn">
+        back home
+      </Link>
+    </Wrapper>
+  );
 };
 const Wrapper = styled.section`
   min-height: 100vh;

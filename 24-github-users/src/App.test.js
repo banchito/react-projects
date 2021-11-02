@@ -1,9 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import Error from "./pages/Error";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+test("renders learn react link", () => {
+  render(<App />);
+  screen.debug();
+  const linkElement = screen.getByTestId("back-home");
   expect(linkElement).toBeInTheDocument();
 });
