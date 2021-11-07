@@ -1,9 +1,45 @@
-import React from 'react';
-import styled from 'styled-components';
-import { MdSearch } from 'react-icons/md';
-import { GithubContext } from '../context/context';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { MdSearch } from "react-icons/md";
+import { GithubContext } from "../context/context";
 const Search = () => {
-  return <h2>search component</h2>;
+  //we can also avoid React.useState() by importing
+  //useState above and then simply using the method
+  // Declare a new state variable, which we'll call "user"
+  /**
+   * Normally, variables “disappear” when the
+   * function exits but state variables
+   * are preserved by React
+   */
+  const [user, setUser] = useState("");
+  //get things from global context
+  //nfn
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+  };
+
+  return (
+    <section className="section">
+      <Wrapper className="section-center">
+        <form onSubmit={handleSubmit}>
+          <div className="form-control">
+            <MdSearch></MdSearch>
+            <input
+              type="text"
+              placeholder="enter github user"
+              value={user}
+              onChange={(e) => {
+                setUser(e.target.value);
+              }}
+            ></input>
+            <button type="submit">search</button>
+          </div>
+        </form>
+        <h3>requests: 60/60</h3>
+      </Wrapper>
+    </section>
+  );
 };
 
 const Wrapper = styled.div`
