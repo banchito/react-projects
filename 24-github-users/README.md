@@ -134,3 +134,6 @@ package.json
    1. Is it getting the correct data back?
 5. How do we test the updated Info.js with the icons?
    1. One thing to notice here is that each icon has the same className. That's because these are used for styling purposes.
+6. Testing Search.js
+   1. How do we test that it looks correct?
+   2. How do we test that it behaves correctly on type and submit?

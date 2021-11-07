@@ -22,7 +22,7 @@ const Search = () => {
   return (
     <section className="section">
       <Wrapper className="section-center">
-        <form onSubmit={handleSubmit}>
+        <form data-testid="search-form" onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch></MdSearch>
             <input
