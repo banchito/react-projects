@@ -23,8 +23,9 @@
     "build": "CI= react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "wdio": "wdio run wdio.conf.js",
-    "cy": "npx cypress run"
+    "test:visual": "wdio run wdio.conf.js",
+    "test:cy": "npx cypress run",
+    "test:all": "npm run test:visual && npm run test:cy"
   },
   "eslintConfig": {
     "extends": "react-app"

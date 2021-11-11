@@ -5,7 +5,6 @@ import Followers from "./Followers";
 const User = () => {
   return (
     <section className="section">
-      search component
       <Wrapper className="section-center">
         <Card></Card>
         <Followers></Followers>
