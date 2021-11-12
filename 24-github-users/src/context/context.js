@@ -24,9 +24,17 @@ const GithubProvider = ({ children }) => {
   //check rate
   //nfn - named function
   const checkRequests = () => {
+    //default is a GET
     axios(`${rootUrl}/rate_limit`)
-      .then((data) => {
-        console.log(data);
+      .then(({ data }) => {
+        let {
+          //data.rate contains the limit, remaining properties that we want
+          rate: { remaining },
+        } = data;
+        setRequests(remaining);
+        if (remaining === 0) {
+          //throw an error
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -45,7 +53,7 @@ const GithubProvider = ({ children }) => {
    */
   useEffect(checkRequests, []);
   return (
-    <GithubContext.Provider value={{ githubUser, repos, followers }}>
+    <GithubContext.Provider value={{ githubUser, repos, followers, requests }}>
       {children}
     </GithubContext.Provider>
   );
