@@ -16,6 +16,9 @@ const Search = () => {
   //nfn
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (user) {
+      //can add some logic here
+    }
     console.log(user);
   };
 
