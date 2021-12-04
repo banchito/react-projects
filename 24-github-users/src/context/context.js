@@ -13,7 +13,7 @@ const GithubContext = React.createContext();
 const GithubProvider = ({ children }) => {
   //the default value of useState is mockUser
   //later we can use setGithubUser() to change the value
-  //`dar`
+  //`dar` - destructured array
   const [githubUser, setGithubUser] = useState(mockUser);
   const [repos, setRepos] = useState(mockRepos);
   const [followers, setFollowers] = useState(mockFollowers);
@@ -27,8 +27,9 @@ const GithubProvider = ({ children }) => {
     //default is a GET
     axios(`${rootUrl}/rate_limit`)
       .then(({ data }) => {
+        console.log(data);
         let {
-          //data.rate contains the limit, remaining properties that we want
+          //data.rate contains the limit + remaining properties
           rate: { remaining },
         } = data;
         setRequests(remaining);
@@ -43,13 +44,19 @@ const GithubProvider = ({ children }) => {
 
   //error
   /**
+   * useEffect()
    * Sometimes, we want to run some additional code after React has updated the DOM.
    * Network requests, manual DOM mutations, and logging are common examples of
    * effects that don’t require a cleanup.
    *
-   * In React class components, the render method itself shouldn’t cause side effects.
-   * It would be too early —
-   * we typically want to perform our effects after React has updated the DOM.
+  What does useEffect do? 
+  By using this Hook, you tell React that your component needs to do something after render. 
+  React will remember the function you passed (we’ll refer to it as our “effect”), 
+  and call it later after performing the DOM updates. 
+  In this effect, we set the document title, 
+  but we could also perform data fetching or call some other imperative API. 
+   *
+   * Once the app loads, use checkRequests() as the callback
    */
   useEffect(checkRequests, []);
   return (

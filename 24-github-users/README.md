@@ -146,4 +146,5 @@ package.json
    1. One thing to notice here is that each icon has the same className. That's because these are used for styling purposes.
 6. Testing Search.js
    1. How do we test that it looks correct?
-   2. How do we test that it behaves correctly on type and submit?
+   2. How do we test that a search correctly updates the in remaining?
+   3. How do we test that having 0 remaining requests will hide the button?
