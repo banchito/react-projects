@@ -1,3 +1,13 @@
+## Getting Started
+
+1. Install node 14 LTS
+2. Install create-react-app `npm install -g create-react-app`
+
+```bash
+cd 24-github-users
+npm i && npm start
+```
+
 ## Starter Project
 
 - css provided (global styles, styled components)
