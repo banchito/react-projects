@@ -21,6 +21,22 @@ const GithubProvider = ({ children }) => {
   const [requests, setRequests] = useState(0);
   const [loading, setIsLoading] = useState(false);
 
+  //`nfn` for const named function
+  const searchGithubUser = async (user) => {
+    //toggleError
+    //setLoading(true)
+    const response = await axios(`${rootUrl}/users/${user}`).catch((err) =>
+      console.log(err)
+    );
+    console.log(response);
+    if (response) {
+      setGithubUser(response.data);
+      //more logic here
+    } else {
+      console.log("no such user");
+    }
+  };
+
   //check rate
   //nfn - named function
   const checkRequests = () => {
@@ -60,7 +76,9 @@ const GithubProvider = ({ children }) => {
    */
   useEffect(checkRequests, []);
   return (
-    <GithubContext.Provider value={{ githubUser, repos, followers, requests }}>
+    <GithubContext.Provider
+      value={{ githubUser, repos, followers, requests, searchGithubUser }}
+    >
       {children}
     </GithubContext.Provider>
   );
