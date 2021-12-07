@@ -19,7 +19,7 @@ const GithubProvider = ({ children }) => {
   const [followers, setFollowers] = useState(mockFollowers);
   //request loading
   const [requests, setRequests] = useState(0);
-  const [loading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   //`nfn` for const named function
   const searchGithubUser = async (user) => {
@@ -75,9 +75,22 @@ const GithubProvider = ({ children }) => {
    * Once the app loads, use checkRequests() as the callback
    */
   useEffect(checkRequests, []);
+
+  /**
+   * 1. Every hook that we want to pass to another component needs to be returned here by being added to 'value'
+   * 2. Then, in a component, the function is destructured const {isLoading} = React.useContext(GithubContext)
+   * 3. And then used
+   */
   return (
     <GithubContext.Provider
-      value={{ githubUser, repos, followers, requests, searchGithubUser }}
+      value={{
+        githubUser,
+        repos,
+        followers,
+        requests,
+        searchGithubUser,
+        isLoading,
+      }}
     >
       {children}
     </GithubContext.Provider>
