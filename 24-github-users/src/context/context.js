@@ -30,8 +30,18 @@ const GithubProvider = ({ children }) => {
     );
     console.log(response);
     if (response) {
+      //response.data contains the user object with all the info
       setGithubUser(response.data);
-      //more logic here
+      // the `login, followers_url` objects are actually properties of the response.data json object
+      const { login, followers_url } = response.data;
+      //repos
+      axios
+        .get(`${rootUrl}/users/${login}/repos`)
+        .then((response) => setRepos(response.data));
+      //followers
+      axios
+        .get(`${followers_url}?per_page=100`)
+        .then((response) => setFollowers(response.data));
     } else {
       console.log("no such user");
     }
