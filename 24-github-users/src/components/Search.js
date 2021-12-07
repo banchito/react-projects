@@ -12,7 +12,8 @@ const Search = () => {
    * are preserved by React
    */
   const [user, setUser] = useState("");
-  const { requests, searchGithubUser } = React.useContext(GithubContext);
+  const { requests, searchGithubUser, isLoading } =
+    React.useContext(GithubContext);
   //get things from global context
   //nfn
   const handleSubmit = (e) => {
@@ -37,7 +38,9 @@ const Search = () => {
                 setUser(e.target.value);
               }}
             ></input>
-            {requests > 0 && <button type="submit">search</button>}
+            {requests > 0 && !isLoading && (
+              <button type="submit">search</button>
+            )}
           </div>
         </form>
         <h3>requests: {requests}/60</h3>
