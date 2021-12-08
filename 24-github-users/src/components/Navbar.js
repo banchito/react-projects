@@ -8,6 +8,13 @@ const Navbar = () => {
   return (
     <Wrapper>
       <button onClick={loginWithRedirect}>login</button>
+      <button
+        onClick={() => {
+          logout({ returnTo: window.location.origin });
+        }}
+      >
+        logout
+      </button>
     </Wrapper>
   );
 };
