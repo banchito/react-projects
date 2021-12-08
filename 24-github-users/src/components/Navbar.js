@@ -5,16 +5,31 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
   const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
     useAuth0();
+  const isLoggedIn = isAuthenticated && user;
+
   return (
     <Wrapper>
-      <button onClick={loginWithRedirect}>login</button>
-      <button
-        onClick={() => {
-          logout({ returnTo: window.location.origin });
-        }}
-      >
-        logout
-      </button>
+      {/* 
+      It works because in JavaScript, true && expression always evaluates to expression, 
+      and false && expression always evaluates to false.
+      */}
+      {isLoggedIn && user.picture && (
+        <>
+          <img src={user.picture} alt={user.name}></img>
+          <h4>Welcome {user.name}</h4>
+        </>
+      )}
+      {isLoggedIn ? (
+        <button
+          onClick={() => {
+            logout({ returnTo: window.location.origin });
+          }}
+        >
+          logout
+        </button>
+      ) : (
+        <button onClick={loginWithRedirect}>login</button>
+      )}
     </Wrapper>
   );
 };
