@@ -152,3 +152,4 @@ package.json
    1. Re-run the tests, what happens?
       1. Need to update and add a `testid` to a button for cypress test
    2. How do we test for login/logout features
+      1. This isn't trivial, however, check out [Modern React + NodeJS course](https://courses.ultimateqa.com/courses/react-and-nodejs). Section on "coding and testing an auth api" and "automation best practices" section where we test logins
