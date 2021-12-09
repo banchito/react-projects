@@ -15,19 +15,21 @@ function App() {
 
     //<Switch> will render the first component that is found
     //and not rendering the Error page on every Route
-    <Router>
-      <Switch>
-        <PrivateRoute path="/" exact={true}>
-          <Dashboard></Dashboard>
-        </PrivateRoute>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="*">
-          <Error></Error>
-        </Route>
-      </Switch>
-    </Router>
+    <AuthWrapper>
+      <Router>
+        <Switch>
+          <PrivateRoute path="/" exact={true}>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="*">
+            <Error></Error>
+          </Route>
+        </Switch>
+      </Router>
+    </AuthWrapper>
   );
 }
 
