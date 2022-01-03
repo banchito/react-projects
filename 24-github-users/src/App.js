@@ -67,7 +67,10 @@ import "./index.css";
 
 const App = () => {
   return (
-    <section>
+    <section className="booklist">
+      <Book></Book>
+      <Book></Book>
+      <Book></Book>
       <Book></Book>
       <Book></Book>
       <Book></Book>
@@ -77,7 +80,7 @@ const App = () => {
 
 function Book() {
   return (
-    <article>
+    <article className="book">
       <Image></Image>
       <Title></Title>
       <Author></Author>
@@ -86,7 +89,7 @@ function Book() {
 }
 
 // an implicit return
-const Image = () => <img src="../images/preloader.gif" alt=""></img>;
+const Image = () => <img src="images/preloader.gif" alt=""></img>;
 
 const Title = () => {
   return <h1>I love you to the moon</h1>;
