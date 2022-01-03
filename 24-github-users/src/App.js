@@ -68,9 +68,18 @@ import "./index.css";
 const App = () => {
   return (
     <section className="booklist">
-      <Book></Book>
-      <Book></Book>
-      <Book></Book>
+      {/* when our Book() takes props, we can pass in any value through the props */}
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      ></Book>
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      ></Book>
+      <Book author="Amelia H"></Book>
       <Book></Book>
       <Book></Book>
       <Book></Book>
@@ -78,15 +87,25 @@ const App = () => {
   );
 };
 
-const author = "Amelia H";
-function Book() {
-  //instead of hardcoding, we can move the value into a variable
-  const title = "I love you to the moon";
+const firstBook = {
+  img: "",
+  title: "I love you to the moon",
+  author: "Amelia H",
+};
+
+const secondBook = {
+  img: "",
+  title: "Harry Potter",
+  author: "Harry's Author",
+};
+
+// we can call props whatever we want, but 'props' is the convention
+function Book(props) {
   return (
     <article className="book">
       <img src="images/preloader.gif" alt=""></img>
-      <h1>{title}</h1>
-      <h4>{author}</h4>
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
       {/* can't have an expression in the {}, must return value */}
       {/* <p>{let x=4;}</p> */}
     </article>
