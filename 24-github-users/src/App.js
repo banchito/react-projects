@@ -73,7 +73,11 @@ const App = () => {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      ></Book>
+      >
+        {/* 'children' prop is created by creating a tag
+        in between the opening and closing tag */}
+        <p>lorem ipsum</p>
+      </Book>
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -104,7 +108,7 @@ const secondBook = {
 function Book(props) {
   // destructured object which is the same as passing props like
   // props.img, props.title...
-  const { img, title, author } = props;
+  const { img, title, author, children } = props;
   // even easier is to simply destructure in parameters of method
   // function Book({ img, title, author })
   return (
@@ -112,8 +116,7 @@ function Book(props) {
       <img src={img} alt=""></img>
       <h1>{title}</h1>
       <h4>{author}</h4>
-      {/* can't have an expression in the {}, must return value */}
-      {/* <p>{let x=4;}</p> */}
+      {children}
     </article>
   );
 }
