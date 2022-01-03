@@ -96,7 +96,16 @@ const Title = () => {
 };
 
 const Author = () => {
-  return <h4>Amelia H</h4>;
+  // first {} we enter into the JS world and the nested {}
+  // mean that we are creating a JS object
+  // in our case we set a bunch of JS properties using a JS object
+  // which has a property: "value" notation
+  // this is inline css
+  return (
+    <h4 style={{ color: "#617d98", fontSize: ".75rem", marginTop: ".25rem" }}>
+      Amelia H
+    </h4>
+  );
 };
 
 export default App;
