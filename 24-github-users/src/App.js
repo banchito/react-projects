@@ -1,5 +1,8 @@
 import React from "react";
 import "./index.css";
+//the name of the named export needs to match the name in the file being imported
+//.js files don't need extensions
+import { books } from "./books";
 
 // JSX Rules
 //1. always needs to return a single element like a <div>
@@ -77,21 +80,6 @@ const App = () => {
     </section>
   );
 };
-
-const books = [
-  {
-    id: 1,
-    img: "",
-    title: "I love you to the moon",
-    author: "Amelia H",
-  },
-  {
-    id: 2,
-    img: "",
-    title: "Harry Potter",
-    author: "Harry's Author",
-  },
-];
 
 // used the {...book} operator to get all the properties of the book
 // then destructured in the parameters of the Book()
