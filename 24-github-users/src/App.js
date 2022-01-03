@@ -100,12 +100,18 @@ const secondBook = {
 };
 
 // we can call props whatever we want, but 'props' is the convention
+// props is just another parameter
 function Book(props) {
+  // destructured object which is the same as passing props like
+  // props.img, props.title...
+  const { img, title, author } = props;
+  // even easier is to simply destructure in parameters of method
+  // function Book({ img, title, author })
   return (
     <article className="book">
-      <img src="images/preloader.gif" alt=""></img>
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={img} alt=""></img>
+      <h1>{title}</h1>
+      <h4>{author}</h4>
       {/* can't have an expression in the {}, must return value */}
       {/* <p>{let x=4;}</p> */}
     </article>
