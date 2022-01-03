@@ -69,7 +69,8 @@ const App = () => {
   return (
     <section className="booklist">
       {books.map((book) => {
-        return <Book book={book}></Book>;
+        // React wants to keep track of all the items that we're adding
+        return <Book key={book.id} book={book}></Book>;
       })}
     </section>
   );
@@ -77,11 +78,13 @@ const App = () => {
 
 const books = [
   {
+    id: 1,
     img: "",
     title: "I love you to the moon",
     author: "Amelia H",
   },
   {
+    id: 2,
     img: "",
     title: "Harry Potter",
     author: "Harry's Author",
