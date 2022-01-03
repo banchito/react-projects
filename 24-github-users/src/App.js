@@ -78,12 +78,17 @@ const App = () => {
   );
 };
 
+const author = "Amelia H";
 function Book() {
+  //instead of hardcoding, we can move the value into a variable
+  const title = "I love you to the moon";
   return (
     <article className="book">
-      <Image></Image>
-      <Title></Title>
-      <Author></Author>
+      <img src="images/preloader.gif" alt=""></img>
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+      {/* can't have an expression in the {}, must return value */}
+      {/* <p>{let x=4;}</p> */}
     </article>
   );
 }
@@ -101,11 +106,7 @@ const Author = () => {
   // in our case we set a bunch of JS properties using a JS object
   // which has a property: "value" notation
   // this is inline css
-  return (
-    <h4 style={{ color: "#617d98", fontSize: ".75rem", marginTop: ".25rem" }}>
-      Amelia H
-    </h4>
-  );
+  return <h4>Amelia H</h4>;
 };
 
 export default App;
