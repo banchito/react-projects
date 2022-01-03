@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 // JSX Rules
 //1. always needs to return a single element like a <div>
@@ -67,6 +68,8 @@ import React from "react";
 const App = () => {
   return (
     <section>
+      <Book></Book>
+      <Book></Book>
       <Book></Book>
     </section>
   );
