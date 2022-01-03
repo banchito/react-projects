@@ -70,7 +70,9 @@ const App = () => {
     <section className="booklist">
       {books.map((book) => {
         // React wants to keep track of all the items that we're adding
-        return <Book key={book.id} book={book}></Book>;
+        // instead of passing in book={book}, we can use the spread operator
+        // to get all of the properties off of a book
+        return <Book key={book.id} {...book}></Book>;
       })}
     </section>
   );
@@ -91,14 +93,9 @@ const books = [
   },
 ];
 
-// we can call props whatever we want, but 'props' is the convention
-// props is just another parameter
-function Book(props) {
-  // destructured object which is the same as passing props like
-  // props.img, props.title...
-  const { img, title, author } = props.book;
-  // even easier is to simply destructure in parameters of method
-  // function Book({ img, title, author })
+// used the {...book} operator to get all the properties of the book
+// then destructured in the parameters of the Book()
+function Book({ img, title, author }) {
   return (
     <article className="book">
       <img src={img} alt=""></img>
