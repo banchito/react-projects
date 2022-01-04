@@ -3,6 +3,7 @@ import "./index.css";
 //the name of the named export needs to match the name in the file being imported
 //.js files don't need extensions
 import { books } from "./books";
+import Book from "./Book";
 
 // JSX Rules
 //1. always needs to return a single element like a <div>
@@ -80,40 +81,5 @@ const App = () => {
     </section>
   );
 };
-
-// used the {...book} operator to get all the properties of the book
-// then destructured in the parameters of the Book()
-function Book({ img, title, author }) {
-  // attribute, eventHandler
-  // onClick, onMouseOver
-  const clickHandler = () => {
-    alert("hello world");
-  };
-
-  const complexExample = (author) => {
-    console.log(author);
-  };
-
-  return (
-    <article
-      className="book"
-      onMouseOver={() => {
-        console.log(title);
-      }}
-    >
-      <img src={img} alt=""></img>
-      {/* we're using an inline function to perform an onClick() */}
-      <h1 onClick={() => console.log(title)}>{title}</h1>
-      <h4>{author}</h4>
-      <button type="button" onClick={clickHandler}>
-        reference example
-      </button>
-      {/* we were able to pass a varable to our function */}
-      <button type="button" onClick={() => complexExample(author)}>
-        more complex example
-      </button>
-    </article>
-  );
-}
 
 export default App;

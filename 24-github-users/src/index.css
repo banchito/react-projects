@@ -1,4 +1,4 @@
-general {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +11,6 @@ body {
   color: #222;
 }
 
-/* targeting the booklist className from App.js */
 .booklist {
   width: 90vw;
   max-width: 1170px;
@@ -19,10 +18,10 @@ body {
   display: grid;
   gap: 2rem;
 }
-
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 768px) {
   .booklist {
     grid-template-columns: repeat(3, 1fr);
+    /* align-items: start; */
   }
 }
 
@@ -31,11 +30,9 @@ body {
   border-radius: 1rem;
   padding: 1rem 2rem;
 }
-
 .book h1 {
   margin-top: 0.5rem;
 }
-
 .book h4 {
   color: #617d98;
   font-size: 0.75rem;
@@ -43,4 +40,7 @@ body {
 }
 .book p {
   margin-top: 0.5rem;
+}
+.book img {
+  size: 2rem;
 }
